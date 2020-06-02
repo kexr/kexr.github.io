@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Bootstrap全局CSS整理 | 
+	 
+	技术改变生活
+	</title>
+	
+	<!-- keywords,description -->
+	
+		<meta name="keywords" content="前端,MYSQL,CSS,JS,VUE,网页制作,BOOT" />
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+  
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">技术改变生活</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+		
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="text" placeholder="search...">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file active">
+									<a href="/2020/06/02/Bootstrap%E5%85%A8%E5%B1%80CSS%E6%95%B4%E7%90%86/">
+										Bootstrap全局CSS整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/06/01/SQL%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E6%9C%80%E5%85%A8%E6%95%B4%E7%90%86/">
+										SQL查询函数最全整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+
+	Bootstrap全局CSS整理
+</h1>
+<div class="article-meta">
+	
+	<span>柯欣然</span>
+	<span>2020-06-02 13:34:39</span>
+    
+		<div id="article-categories">
+            
+		</div>
+    
+</div>
+
+<div id="article-content">
+	<h2 id="CSS全局常用类名整理"><a href="#CSS全局常用类名整理" class="headerlink" title="CSS全局常用类名整理"></a>CSS全局常用类名整理</h2><blockquote>
+<p>以下整理为类名整理，通过引用BOOT样式表后，在元素中引用类名生效</p>
+</blockquote>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><blockquote>
+<p>boot的所有代码都要放在容器中 (容器一般为最外层div)</p>
+</blockquote>
+<blockquote>
+<p>响应标识: 超大屏(xl)&gt;1200/大屏(lg)992-1199/中屏(md)768-991/小屏(sm)576-767</p>
+</blockquote>
+<ol>
+<li>container</li>
+</ol>
+<blockquote>
+<p>定宽容器，不同屏幕容器大小不同，单相同等级范围内容器宽度不变</p>
+</blockquote>
+<ol start="2">
+<li>container-fluid</li>
+</ol>
+<blockquote>
+<p>变宽容器，宽度为body的100%</p>
+</blockquote>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><ol>
+<li>btn</li>
+</ol>
+<blockquote>
+<p>基本类，必有</p>
+</blockquote>
+<ol start="2">
+<li>btn-danger/warning/sussess/primary/info/secondary/dark/light</li>
+</ol>
+<blockquote>
+<p>按钮颜色:红/黄/绿/蓝/青/灰/深/浅</p>
+</blockquote>
+<ol start="3">
+<li>btn-outline-danger/warning…</li>
+</ol>
+<blockquote>
+<p>带有边框的按钮，边框颜色为 红/黄…</p>
+</blockquote>
+<h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><ol>
+<li>rounded</li>
+</ol>
+<blockquote>
+<p>0.25rem圆角</p>
+</blockquote>
+<ol start="2">
+<li>rounded-circle</li>
+</ol>
+<blockquote>
+<p>50%圆角</p>
+</blockquote>
+<ol start="3">
+<li>img-fluid</li>
+</ol>
+<blockquote>
+<p>缩略图，图片可变大小，但最大不超过原始值</p>
+</blockquote>
+<h3 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h3><ol>
+<li>text-muted/danger/info…</li>
+</ol>
+<blockquote>
+<p>颜色:灰/红/青…</p>
+</blockquote>
+<ol start="2">
+<li>text-uppercase/lowercase/capitalize</li>
+</ol>
+<blockquote>
+<p>大写/小写/首字母大写</p>
+</blockquote>
+<ol start="3">
+<li>font-weight-bold/light/normal</li>
+</ol>
+<blockquote>
+<p>加粗/正常</p>
+</blockquote>
+<ol start="4">
+<li>h1-h6</li>
+</ol>
+<blockquote>
+<p>字号</p>
+</blockquote>
+<ol start="5">
+<li>text-xl/lg/md/sm-left/center/right</li>
+</ol>
+<blockquote>
+<p>响应式对齐</p>
+</blockquote>
+<ol start="6">
+<li>text-justify</li>
+</ol>
+<blockquote>
+<p>两端对齐，此对齐无响应式</p>
+</blockquote>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><table>
+<thead>
+<tr>
+<th align="left">ul</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">list-group</td>
+<td align="left">基本类</td>
+</tr>
+<tr>
+<td align="left">list-unstyled</td>
+<td align="left">取消点状标识</td>
+</tr>
+<tr>
+<td align="left">li</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">list-group-item</td>
+<td align="left">基本类</td>
+</tr>
+<tr>
+<td align="left">list-group-item-danger/warning/info</td>
+<td align="left">颜色</td>
+</tr>
+</tbody></table>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><ol>
+<li>table</li>
+</ol>
+<blockquote>
+<p>基本类，对本身和后代布局</p>
+</blockquote>
+<ol start="2">
+<li>table-bordered</li>
+</ol>
+<blockquote>
+<p>边框</p>
+</blockquote>
+<ol start="3">
+<li>table-danger/warning…</li>
+</ol>
+<blockquote>
+<p>颜色</p>
+</blockquote>
+<ol start="4">
+<li>table-striped</li>
+</ol>
+<blockquote>
+<p>隔行变色</p>
+</blockquote>
+<ol start="5">
+<li>table-hover</li>
+</ol>
+<blockquote>
+<p>悬停效果</p>
+</blockquote>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2020/06/01/SQL%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E6%9C%80%E5%85%A8%E6%95%B4%E7%90%86/">
+                SQL查询函数最全整理
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			av: AV,
+			el: '#vcomments',
+			notify: false,
+			verify: false,
+			path: window.location.pathname,
+			appId: '',
+			appKey: '',
+			placeholder: '请输入评论',
+			avatar: 'retro',
+			recordIP: false
+		})
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">柯欣然</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
