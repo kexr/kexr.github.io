@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Bootstrap_Popper.js获取失败解决方案 | 
+	 
+	技术改变生活
+	</title>
+	
+	<!-- keywords,description -->
+	
+		<meta name="keywords" content="前端,MYSQL,CSS,JS,VUE,网页制作,BOOT" />
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+  
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">技术改变生活</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+		
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="text" placeholder="search...">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file active">
+									<a href="/2020/06/04/Bootstrap-Popper-js%E8%8E%B7%E5%8F%96%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+										Bootstrap-Popper-js获取失败解决方案
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/06/02/Bootstrap%E5%85%A8%E5%B1%80CSS%E6%95%B4%E7%90%86/">
+										Bootstrap全局CSS整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/06/03/Boot%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8/">
+										Boot栅格布局快速应用
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/06/01/SQL%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E6%9C%80%E5%85%A8%E6%95%B4%E7%90%86/">
+										SQL查询函数最全整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+
+	Bootstrap-Popper-js获取失败解决方案
+</h1>
+<div class="article-meta">
+	
+	<span>柯欣然</span>
+	<span>2020-06-04 10:59:12</span>
+    
+		<div id="article-categories">
+            
+		</div>
+    
+</div>
+
+<div id="article-content">
+	<h3 id="boot基础引用"><a href="#boot基础引用" class="headerlink" title="boot基础引用"></a>boot基础引用</h3><p>boot为我们提供了许多组件,这些组件简单易用，大方美观，其功能依赖于jquery.min.js,popper.min.js,bootstrap.min.js三大js文件，正确的引用是组件正常运行的基础。</p>
+<h3 id="boot基础规则"><a href="#boot基础规则" class="headerlink" title="boot基础规则"></a>boot基础规则</h3><p>首先要注意的引用规则是jquery.min.js,popper.min.js,bootstrap.min.js依次引用,引用顺序的不同可能导致组件使用异常。</p>
+<h3 id="boot基础引用方法"><a href="#boot基础引用方法" class="headerlink" title="boot基础引用方法"></a>boot基础引用方法</h3><p>引用方式有两种，一是引用网络资源，二是将相关文件从官网或者使用npm等包管理工具下载,下载后存放在项目下对应的文件夹中，引用本地文件。</p>
+<h4 id="网络资源引用"><a href="#网络资源引用" class="headerlink" title="网络资源引用"></a>网络资源引用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;twitter-bootstrap&#x2F;4.3.1&#x2F;css&#x2F;bootstrap.min.css&quot;&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!-- jQuery文件。务必在bootstrap.min.js 之前引入 --&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;jquery&#x2F;3.2.1&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js --&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;popper.js&#x2F;1.15.0&#x2F;umd&#x2F;popper.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!-- 最新的 Bootstrap4 核心 JavaScript 文件 --&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.staticfile.org&#x2F;twitter-bootstrap&#x2F;4.3.1&#x2F;js&#x2F;bootstrap.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="本地资源引用"><a href="#本地资源引用" class="headerlink" title="本地资源引用"></a>本地资源引用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;css&#x2F;bootstrap.css&quot; &#x2F;&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;.&#x2F;js&#x2F;jquery.min.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;.&#x2F;js&#x2F;popper.min.js&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;.&#x2F;js&#x2F;bootstrap.min.js&quot;  type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Bootstrap’s-dropdowns-require-Popper-js报错"><a href="#Bootstrap’s-dropdowns-require-Popper-js报错" class="headerlink" title="Bootstrap’s dropdowns require Popper.js报错"></a>Bootstrap’s dropdowns require Popper.js报错</h3><p>而在引用本地资源时我们有时会遇到下拉框无法正常显示等问题,网页报错为Bootstrap’s dropdowns require Popper.js即popper.js错误。</p>
+<h4 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h4><p>这种问题往往是由于我们在复制文件到项目文件中时，复制错误导致的，值得注意的是，在下载的popper包中,存在两个popper.min.js文件，分别位于esm和umd中，从上文的网络资源连接中看出，我们需要的是umd下的js文件，如果错误复制了esm中的文件到项目中，就会报错。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>解决这个问题的方法有两种</p>
+<ul>
+<li>使用上文中的网络连接</li>
+<li>复制umd目录下的popper.min.js到引用目录中，覆盖之前的错误文件</li>
+</ul>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2020/06/03/Boot%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8/">
+                Boot栅格布局快速应用
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			av: AV,
+			el: '#vcomments',
+			notify: false,
+			verify: false,
+			path: window.location.pathname,
+			appId: '',
+			appKey: '',
+			placeholder: '请输入评论',
+			avatar: 'retro',
+			recordIP: false
+		})
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">柯欣然</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
