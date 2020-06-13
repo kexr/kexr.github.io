@@ -1,0 +1,15 @@
+.navbar-brand img{
+	width: 40px;
+	height: 45px;
+}
+.navbar-brand img+img{
+	width: 100px;
+	height: 45px;
+}
+.car-md{
+	width: 150px;
+	height: 80px;
+}
+.code-md{
+	width: 124px;
+}
