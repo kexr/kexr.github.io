@@ -6,7 +6,7 @@
 }
 @media screen and (min-width:992px) {
 	.header{
-	    height: 100px;
+	    height: 120px;
 	}
 	.footer{
 	    height: 300px;
@@ -14,10 +14,10 @@
 }
 @media screen and (max-width:991px) {
 	.header{
-	    height: 170px;
+	    height: 180px;
 	}
 	.footer{
-	    height: 500px;
+	    height: 540px;
 	}
 }
 .carousel-control-prev,.carousel-control-next{

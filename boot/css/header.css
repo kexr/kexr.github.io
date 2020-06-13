@@ -16,3 +16,6 @@
 	width: 100px;
 	height: 45px;
 }
+a.active{
+	color: #0062CC !important;
+}
