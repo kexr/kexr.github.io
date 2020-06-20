@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		RegExp对象原理及应用 | 
+	 
+	技术改变生活
+	</title>
+	
+	<!-- keywords,description -->
+	
+		<meta name="keywords" content="前端,MYSQL,CSS,JS,VUE,网页制作,BOOT" />
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+  
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">技术改变生活</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+		
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="text" placeholder="search...">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/Bootstrap-Popper-js%E8%8E%B7%E5%8F%96%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+										Bootstrap-Popper-js获取失败解决方案
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/Bootstrap%E5%85%A8%E5%B1%80CSS%E6%95%B4%E7%90%86/">
+										Bootstrap全局CSS整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/Boot%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%BA%94%E7%94%A8%E8%AF%A6%E8%A7%A3/">
+										Boot导航栏应用详解
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/Boot%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8/">
+										Boot栅格布局快速应用
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/RegExp%E5%AF%B9%E8%B1%A1%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/">
+										RegExp对象原理及应用
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/SQL%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E6%9C%80%E5%85%A8%E6%95%B4%E7%90%86/">
+										SQL查询函数最全整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+
+	RegExp对象原理及应用
+</h1>
+<div class="article-meta">
+	
+	<span>柯欣冉</span>
+	<span>2020-06-20 11:11:00</span>
+    
+		<div id="article-categories">
+            
+		</div>
+    
+</div>
+
+<div id="article-content">
+	<h2 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h2><p>RegExp对象用以专门记录一则正则表达式，该对象提供了多种函数，得以更加简易的使用正则表达式执行验证和查找操作。</p>
+<h4 id="创建RegExp对象"><a href="#创建RegExp对象" class="headerlink" title="创建RegExp对象"></a>创建RegExp对象</h4><ul>
+<li><code>var reg=/正则/ig;</code><br>将固定的正则表达式直接付给一个变量，是简易的创建对象方法，但是实际应用中往往更加灵活，需要根据条件来改变正则表达式的值。</li>
+<li><code>var reg=new RegExp(&quot;正则字符串格式&quot;,&quot;ig&quot;)</code><br>使用new来创建对象虽然略复杂，但是由于正则表达式是由字符串的形式传入的，故可以与变量和逻辑结合，更加灵活。</li>
+</ul>
+<h4 id="RegExp对象函数"><a href="#RegExp对象函数" class="headerlink" title="RegExp对象函数"></a>RegExp对象函数</h4><ul>
+<li><p>var bool=reg.test(str);<br>RegExp对象reg检查字符串str是否符合正则表达式的要求，符合要求返回true，否则返回flase。</p>
+<blockquote>
+<p>注：通常情况下，只要字符串中含有符合正则规则的部分即返回true，如果需要完全符合才返回，有多余字符返回flase，需在正则前后分别加 ^ 与 $ 。</p>
+</blockquote>
+</li>
+<li><p>var arr=reg.exec(str);<br>在字符串str中查找符合RegExp对象reg中正则的要求的下一个敏感词。<br>返回值：arr：[0:”敏感词”,index:”位置”]  或者没找到返回为空。</p>
+<blockquote>
+<p>创建reg对象时第二个参数含有g，含义为搜索全部，此时可以通过反复调用exec查找下一个关键词。</p>
+</blockquote>
+<p>查找字符串中含有的所有关键词，返回n个格式为<code>[0:&quot;敏感词&quot;,index:&quot;位置&quot;]</code>的数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">do&#123;</span><br><span class="line">	var names&#x3D;reg.exec(str);</span><br><span class="line">	if(arr!&#x3D;null)&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;else break;</span><br><span class="line">&#125;while(true);</span><br></pre></td></tr></table></figure></li>
+<li><p>原理：<br>a. RegExp对象中含有隐藏属性 lastindex 用以记录下次搜索开始的位置。<br>b. 当一个RegExp对象被建立时，其值为初始值，搜索从头开始。<br>c. 当执行过一次exec函数时,  lastindex属性被重置，值变更为本次搜索到的位置 + 关键词的长度。<br>d. 也就是下次调用该对象的exec函数时，搜索从本次结束的位置开始，查到下一个关键词为止。<br>e. 调用方法：reg.lastindex;</p>
+</li>
+</ul>
+<h2 id="附：正则要点总结"><a href="#附：正则要点总结" class="headerlink" title="附：正则要点总结"></a>附：正则要点总结</h2><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th>含义</th>
+<th>例</th>
+<th>解析</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[备选字列表]</td>
+<td>规定一位字符上存在多种备选字的的列表</td>
+<td><code>[一二三]</code></td>
+<td>字符串中对应位置出现一，二，三都符合要求</td>
+</tr>
+<tr>
+<td>[备选字-备选字]</td>
+<td>连续备选字符表示法，首尾字符用 - 连接，如A-Z,a-z，0-9</td>
+<td><code>[a-zA-Z]</code></td>
+<td>字母吻合</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>[\u4e00-\u9fa5]</code></td>
+<td>汉字吻合</td>
+</tr>
+<tr>
+<td>\预定义字符</td>
+<td>备选字列表的简化版</td>
+<td><code>\d</code></td>
+<td><code>[0-9]</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>\w</code></td>
+<td><code>[0-9A-Za-z]</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><code>\s</code></td>
+<td>空格制表符等</td>
+</tr>
+<tr>
+<td><code>{ n,m }</code></td>
+<td>n为至少有的数量，m为上限数量，{n,}为无上限，{n}为仅n次</td>
+<td><code>/d{4}</code></td>
+<td>当有连续的4位 0-9 数字时符合</td>
+</tr>
+<tr>
+<td><code>*</code></td>
+<td>可有可无多了不限</td>
+<td><code>z/d*</code></td>
+<td>字母z后无论是否有数字，有几个数字，都不影响其吻合要求</td>
+</tr>
+<tr>
+<td><code>?</code></td>
+<td>可有可无最多一次</td>
+<td><code>z/d?</code></td>
+<td>字母z后无论是否有数字都不影响吻合，但最多只能有一个数字</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>可有可无最多一次</td>
+<td><code>z/d+</code></td>
+<td>字母z后必须有数字才可吻合，数字的多少无要求</td>
+</tr>
+<tr>
+<td>`</td>
+<td>`</td>
+<td>分组符号，含义为 或</td>
+<td>`去</td>
+</tr>
+<tr>
+<td><code>()</code></td>
+<td>分组符号，多个子规则视为一个整体，再和其他规则匹配</td>
+<td>`我(qv</td>
+<td>去)`</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>字符串开头</td>
+<td><code>^/d</code></td>
+<td>字符串开头有一个数字</td>
+</tr>
+<tr>
+<td><code>$</code></td>
+<td>字符串结尾</td>
+<td><code>/d$</code></td>
+<td>字符串结尾有一个数字</td>
+</tr>
+<tr>
+<td><code>\b</code></td>
+<td>单词边界</td>
+<td><code>\b[a-z]</code></td>
+<td>每个单词开头为小写字母</td>
+</tr>
+</tbody></table>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/Boot%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%BA%94%E7%94%A8%E8%AF%A6%E8%A7%A3/">
+                Boot导航栏应用详解
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			av: AV,
+			el: '#vcomments',
+			notify: false,
+			verify: false,
+			path: window.location.pathname,
+			appId: '',
+			appKey: '',
+			placeholder: '请输入评论',
+			avatar: 'retro',
+			recordIP: false
+		})
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">柯欣冉</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
