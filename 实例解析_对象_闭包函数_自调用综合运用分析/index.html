@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		实例解析:对象/闭包函数/自调用综合运用分析 | 
+	 
+	技术改变生活
+	</title>
+	
+	<!-- keywords,description -->
+	
+		<meta name="keywords" content="前端,MYSQL,CSS,JS,VUE,网页制作,BOOT" />
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+  
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">技术改变生活</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+		
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="text" placeholder="search...">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/Bootstrap-Popper-js%E8%8E%B7%E5%8F%96%E5%A4%B1%E8%B4%A5%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">
+										Bootstrap-Popper-js获取失败解决方案
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/Bootstrap%E5%85%A8%E5%B1%80CSS%E6%95%B4%E7%90%86/">
+										Bootstrap全局CSS整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/Boot%E5%AF%BC%E8%88%AA%E6%A0%8F%E5%BA%94%E7%94%A8%E8%AF%A6%E8%A7%A3/">
+										Boot导航栏应用详解
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/Boot%E6%A0%85%E6%A0%BC%E5%B8%83%E5%B1%80%E5%BF%AB%E9%80%9F%E5%BA%94%E7%94%A8/">
+										Boot栅格布局快速应用
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/RegExp%E5%AF%B9%E8%B1%A1%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/">
+										RegExp对象原理及应用
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/SQL%E6%9F%A5%E8%AF%A2%E5%87%BD%E6%95%B0%E6%9C%80%E5%85%A8%E6%95%B4%E7%90%86/">
+										SQL查询函数最全整理
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/%E5%AE%9E%E4%BE%8B%E8%A7%A3%E6%9E%90_%E5%AF%B9%E8%B1%A1_%E9%97%AD%E5%8C%85%E5%87%BD%E6%95%B0_%E8%87%AA%E8%B0%83%E7%94%A8%E7%BB%BC%E5%90%88%E8%BF%90%E7%94%A8%E5%88%86%E6%9E%90/">
+										实例解析_对象_闭包函数_自调用综合运用分析
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+
+	实例解析_对象_闭包函数_自调用综合运用分析
+</h1>
+<div class="article-meta">
+	
+	<span>柯欣冉</span>
+	<span>2020-07-01 13:16:12</span>
+    
+		<div id="article-categories">
+            
+		</div>
+    
+</div>
+
+<div id="article-content">
+	<h1 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	var num = 20;</span><br><span class="line">	var obj = &#123;</span><br><span class="line">		num: 30,</span><br><span class="line">		fn: (<span class="keyword">function</span>(num)&#123;</span><br><span class="line">			this.num *= 3;</span><br><span class="line">			num += 15;</span><br><span class="line">			var num = 45;</span><br><span class="line">			<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">					this.num *= 4; </span><br><span class="line">					num += 20;</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;)(num)</span><br><span class="line">	&#125;;</span><br><span class="line">	var fn = obj.fn;</span><br><span class="line">	fn();</span><br><span class="line">	obj.fn();</span><br><span class="line">	console.log(window.num,obj.num);//240 120</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="代码解析"><a href="#代码解析" class="headerlink" title="代码解析"></a>代码解析</h1><blockquote>
+<p>在开始代码解析之前，需要先强调一个要点，即自调用函数是在它被定义的时候运行，而通常不是等待被调用，但是在本文实例中，自调用函数不仅被调用了，并且还运行了一部分，这来自于它有趣的结构——自调用函数与闭包的结合。</p>
+</blockquote>
+<h2 id="代码结构解析"><a href="#代码结构解析" class="headerlink" title="代码结构解析"></a>代码结构解析</h2><h3 id="对象的定义与调用"><a href="#对象的定义与调用" class="headerlink" title="对象的定义与调用"></a>对象的定义与调用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var num = 20;</span><br><span class="line">var obj = &#123;</span><br><span class="line">	num: 30,</span><br><span class="line">	fn: (<span class="keyword">function</span>(num)&#123;...&#125;)(num)</span><br><span class="line">&#125;</span><br><span class="line">var fn = obj.fn;</span><br><span class="line">fn();</span><br><span class="line">obj.fn();</span><br></pre></td></tr></table></figure>
+<p>隐藏部分代码后，可以看到，代码总体由全局变量num，对象obj组成，obj中含有属性num与方法fn。<br>obj.fn指向的是一个自调用函数[^1]，有趣的是，自调用函数中为一个闭包[^2] ,这意味着在定义对象obj时，自调用函数将自动运行返回return[^3]后的函数，定义结束后,obj.fn中将保存return后的值。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fn = obj.fn;</span><br></pre></td></tr></table></figure>
+<p>该句指将obj.fn的值赋给全局量fn，上段指出，定义结束后，obj.fn存放的为return后的函数，故此句为将return后的函数赋给fn，运行后，全局fn为存放return后函数的函数。</p>
+<blockquote>
+<p>注：此刻不能为obj.fn()，方法加括号是调用的含义，语句变为调用方法obj.fn,因return后的函数中无返回值设置，全局fn将被赋值underfind。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fn();</span><br></pre></td></tr></table></figure>
+<p>该句为调用全局函数fn()，全局函数fn的值来自于obj.fn，即return后的函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.fn();</span><br></pre></td></tr></table></figure>
+<p>该句为调用obj内部的方法fn，其实仍然是return后的函数。</p>
+<p>综上，整段代码的结构为，定义一个带有自调用闭包函数的对象obj，对象定义后自调用函数运行完毕，返回内层函数给obj.fn，后将该方法赋给全局函数fn，在全局函数与obj环境下，分别调用fn。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">A[定义对象obj] --自调用--&gt; B(obj.fn&#x3D;&#x3D;return function)</span><br><span class="line">C(obj对象)--调用--&gt;B</span><br><span class="line">B --赋值--&gt; D(全局函数window.fn)</span><br><span class="line">E(全局window)--调用--&gt;D</span><br></pre></td></tr></table></figure>
+<h2 id="代码内部解析"><a href="#代码内部解析" class="headerlink" title="代码内部解析"></a>代码内部解析</h2><h3 id="变量的作用域与this指代"><a href="#变量的作用域与this指代" class="headerlink" title="变量的作用域与this指代"></a>变量的作用域与this指代</h3><blockquote>
+<p>文中所指代码均在普通模式下运行，严格模式下this无法指向window，而是指向undefined。</p>
+</blockquote>
+<p>代码的难点在于对象的方法fn。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1		fn: (<span class="keyword">function</span>(num)&#123;</span><br><span class="line">2			this.num *= 3;                  </span><br><span class="line">3			num += 15;</span><br><span class="line">4			var num = 45;</span><br><span class="line">5			<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">6					this.num *= 4;</span><br><span class="line">7					num += 20;</span><br><span class="line">8					&#125;</span><br><span class="line">9			&#125;)(num)//定义即运行</span><br></pre></td></tr></table></figure>
+<p>fn为自调用函数，即对象obj定义时，1-5行代码运行，运行后返回5-8行代码给obj.fn。<br>值得一提的是，由于自调用函数无调用对象，默认为全局对象window，故<strong>形参num指向全局变量num</strong>，传入值为20。<br>此后函数运行中用到了两个num，一个是this.num，此时由于调用者为全局对象window，this.num==window.num。<br>另一个是num，num是传入的形参，虽然实参值也来自于全局变量num，但是与window.num作用域不同，是<strong>完全不同的两个变量</strong>。<br>num经过了两次声明，首先是作为实参的隐式声明，其后显式的声明提前后无效化。<br>运行中先将全局变量num20乘3变为60，再将形参num20+15变为35，后将45赋给形参，<strong>执行结束后全局变量num变为60,内部变量num变为45</strong>。</p>
+<h4 id="定义后的obj-fn"><a href="#定义后的obj-fn" class="headerlink" title="定义后的obj.fn"></a>定义后的obj.fn</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1		fn: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">6					this.num *= 4;</span><br><span class="line">7					num += 20;</span><br><span class="line">8					&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="fn与obj-fn"><a href="#fn与obj-fn" class="headerlink" title="fn与obj.fn"></a>fn与obj.fn</h3><p>全局函数fn来自于obj.fn,函数代码相同，区别在于<strong>调用环境不同</strong>，代码运行时，this的指代也不同，<strong>fn中的this.num指代全局变量num，而obj.fn中指代obj.num的属性值</strong>。<br>全局fn与obj.fn中相同的为内部num的值，当fn中出现num时，根据作用域链，默认先从函数内部找，函数内部未声明，因此函数为闭包内层函数，故从外层父函数找，得到父函数中的变量num，值为65。<br>作用域链中专有一格指向外层父函数的变量，阻止变量释放，当obj.fn赋给fn时一同赋值，故<strong>两者中内部变量num指向的是同一个变量</strong>，即return外层函数中的num变量。<br><strong>调用全局函数fn时</strong>，全局变量num60乘4变为240，内部变量指向外层变量num45+20=65。<br><strong>调用obj.fn时</strong>，obj.num属性30乘4变为120，指向外层变量的num65+20变为85。<br>最终输出结果为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(window.num,obj.num);//240 120</span><br></pre></td></tr></table></figure>
+
+<p>[^1]:自调用函数格式为<code>(function(形参){代码块})(实参)</code> 。<br>[^2]:闭包格式为<code>function(形参){代码块;return function(形参){代码块}}</code>。<br>[^3]:返回值函数，当程序运行至此时，结束函数并返回return后的语句值。</p>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/RegExp%E5%AF%B9%E8%B1%A1%E5%8E%9F%E7%90%86%E5%8F%8A%E5%BA%94%E7%94%A8/">
+                RegExp对象原理及应用
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			av: AV,
+			el: '#vcomments',
+			notify: false,
+			verify: false,
+			path: window.location.pathname,
+			appId: '',
+			appKey: '',
+			placeholder: '请输入评论',
+			avatar: 'retro',
+			recordIP: false
+		})
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">柯欣冉</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
