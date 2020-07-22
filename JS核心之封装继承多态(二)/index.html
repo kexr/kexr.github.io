@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		JS核心之封装继承多态(二) | 
 	 
 	技术改变生活
 	</title>
@@ -136,7 +138,7 @@
 							</ul>
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/JS%E6%A0%B8%E5%BF%83%E4%B9%8B%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81(%E4%BA%8C)/">
 										JS核心之封装继承多态(二)
 									</a>
@@ -177,42 +179,74 @@
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<div id="index">
+		<h1 id="article-title">
+
+	JS核心之封装继承多态(二)
+</h1>
+<div class="article-meta">
 	
-		<div class="index-li">
-			<a href="/Bootstrap%E5%85%A8%E5%B1%80CSS%E6%95%B4%E7%90%86/">
-				<h2 class="index-title">
-					Bootstrap全局CSS整理
-				</h2>
-				<div class="index-brief">
-					CSS全局常用类名整理
-以下整理为类名整理，通过引用BOOT样式表后，在元素中引用类名生效
-
-容器
-boot的所有代码都要放在容器中 (容器一般为最外层div)
-
-
-响应标识: 超大屏(xl)&gt;1200/大屏(lg)992-1199/中屏(md)768-991/小屏(sm)576-767
-
-
-
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2020-06-02</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
+	<span>柯欣冉</span>
+	<span>2020-07-22 11:51:23</span>
+    
+		<div id="article-categories">
+            
+		</div>
+    
 </div>
 
+<div id="article-content">
+	<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>继承可以<strong>避免方法的重复创建</strong>，实现<strong>代码重用</strong>，<strong>节约内存</strong>。</p>
+<h3 id="原型对象定义与继承"><a href="#原型对象定义与继承" class="headerlink" title="原型对象定义与继承"></a>原型对象定义与继承</h3><p>继承关系在js中已被设置，是通过继<strong>承原型对象</strong>实现的。<br><strong>原型对象：</strong><br>用来<strong>保存子对象共有成员</strong>的对象。存在于原型对象中的方法在创建子对象时不会被复制，而是在子对象中创建一个指向此方法的指针，从而实现代码重用。<br><strong>原型对象的定义：</strong><br>在定义构造函数时会自动创建一个名为<strong>prototype</strong>的属性，指向自动创建的原型对象。<br><strong>原型对象的继承：</strong><br>在使用构造函数创建子对象时，会自动创建子对象的<strong>proto</strong>属性，该属性指向构造函数的原型对象，使子对象可以使用构造函数原型对象中的内容，实现继承关系。<br><strong>添加共有成员：</strong><br><strong>构造函数名.prototype.成员名 = 值;</strong><br>例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Student.prototype.intrSelf = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">... ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存在原型对象中的属性成为其子对象的共有属性，与其自有属性的使用方法相同。<br><strong>使用方法：子对象.属性名。</strong><br><strong>共有属性不可直接在子对象中修改</strong>，因为共有属性虽然可以直接使用，实际上是保存在父对象中的，<strong>只能对原型对象进行修改</strong>，试图直接在子元素中对子对象.属性名方法进行修改的操作只会为子对象添加同名的自有属性，在调用时会优先调用自有属性，但是其他的子对象还是调用原型对象中的属性。</p>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>每个子对象都继承自父对象。</p>
+<h3 id="自定义继承"><a href="#自定义继承" class="headerlink" title="自定义继承"></a>自定义继承</h3><p>当子对象被创建时，将自动指向父对象的原型对象，继承来自于父对象的共有属性，但有时我们需要使它指向其他对象的原型对象，这时需要自定义继承关系。</p>
+<h4 id="针对子对象"><a href="#针对子对象" class="headerlink" title="针对子对象"></a>针对子对象</h4><p>整体更换子对象的共有属性，使其来自于另一个对象。<br>Object.setPrototypeOf(子对象, 新对象)；</p>
+<h4 id="针对父对象"><a href="#针对父对象" class="headerlink" title="针对父对象"></a>针对父对象</h4><p>构造函数.prototype=新对象;<br>但是在更改前创建的子对象不会改变，仍然指向原来的原型对象。</p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>同一个函数，在不同情况中，执行内容不同。</p>
+<h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><p>JS中<strong>不支持直接重载</strong>，但可以在函数中<strong>通过angument获取传入的参数</strong>，通过对angument对象中参数的获取来<strong>根据参数的不同执行不同的代码</strong>。</p>
+<h3 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h3><p>在子对象中<strong>定义和父对象同名的成员</strong>，覆盖父对象中的成员，重写后该子对象在<strong>调用时将优先调用自有属性</strong>，该操作不影响父对象中的成员，也<strong>不影响同个父对象下的其他子对象</strong>。</p>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/JS%E6%A0%B8%E5%BF%83%E4%B9%8B%E5%B0%81%E8%A3%85%E7%BB%A7%E6%89%BF%E5%A4%9A%E6%80%81(%E4%B8%80)/">
+                JS核心之封装继承多态(一)
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			av: AV,
+			el: '#vcomments',
+			notify: false,
+			verify: false,
+			path: window.location.pathname,
+			appId: '',
+			appKey: '',
+			placeholder: '请输入评论',
+			avatar: 'retro',
+			recordIP: false
+		})
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>
