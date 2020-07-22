@@ -188,8 +188,8 @@
 <div id="article-content">
 	<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>封装，继承和多态是面向对象编程的三步，<strong>面向对象编程</strong>，即<strong>先将数据封装</strong>在对象中，然后<strong>按需使用</strong>对象中的成员。</p>
 <h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><p>创建一个<strong>对象</strong>，<strong>集中保存</strong>一个事物的属性和功能，为后续数据的使用做准备，封装<strong>有利于大量数据的维护和使用</strong>。</p>
-<h4 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h4><h6 id="简单创建："><a href="#简单创建：" class="headerlink" title="简单创建：{}"></a>简单创建：{}</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var 对象名 = &#123;</span><br><span class="line">	属性名1: 值2,</span><br><span class="line">	属性名2: 值2,</span><br><span class="line">	   ...: ...</span><br><span class="line">	方法名1: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	   ...: ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h6 id="仿数组创建：new"><a href="#仿数组创建：new" class="headerlink" title="仿数组创建：new"></a>仿数组创建：new</h6><ul>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><h4 id="简单创建："><a href="#简单创建：" class="headerlink" title="简单创建：{}"></a>简单创建：{}</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var 对象名 = &#123;</span><br><span class="line">	属性名1: 值2,</span><br><span class="line">	属性名2: 值2,</span><br><span class="line">	   ...: ...</span><br><span class="line">	方法名1: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	&#125;</span><br><span class="line">	   ...: ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="仿数组创建：new"><a href="#仿数组创建：new" class="headerlink" title="仿数组创建：new"></a>仿数组创建：new</h4><ul>
 <li>构建空对象：var 对象名 = new Object;</li>
 <li>添加新属性：obj.属性名 = 属性值;</li>
 <li>添加新方法：obj.方法名 = function(){…};  <blockquote>
@@ -197,18 +197,18 @@
 </blockquote>
 </li>
 </ul>
-<h6 id="构造函数创建：new-类型名-属性值1，…"><a href="#构造函数创建：new-类型名-属性值1，…" class="headerlink" title="构造函数创建：new 类型名(属性值1，…)"></a>构造函数创建：new 类型名(属性值1，…)</h6><ul>
+<h4 id="构造函数创建：new-类型名-属性值1，…"><a href="#构造函数创建：new-类型名-属性值1，…" class="headerlink" title="构造函数创建：new 类型名(属性值1，…)"></a>构造函数创建：new 类型名(属性值1，…)</h4><ul>
 <li>定义一个构造函数，用来描述一类对象的同一结构。<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> 类型名(形参1,...)&#123;</span><br><span class="line">	this.属性名=形参1;</span><br><span class="line">	      ... = ... ;</span><br><span class="line">	this.方法名=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li>调用构造函数创建对象<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj=new 类型名(属性值1，...);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注：构造函数其实是仿数组构建法的变体，当需要反复创建多个相同结构的对象时，可用构造函数将相同结构保存起来，可以通过调用函数实现代码重用。</p>
 </blockquote>
-<h4 id="访问对象"><a href="#访问对象" class="headerlink" title="访问对象"></a>访问对象</h4><h6 id="访问对象属性：对象名-属性名"><a href="#访问对象属性：对象名-属性名" class="headerlink" title="访问对象属性：对象名.属性名"></a>访问对象属性：对象名.属性名</h6>属性就是保存在对象中的变量，要找到属性，得先找到对象，再用.操作符，进入对象中，访问属性。<h6 id="访问对象方法：对象名-方法"><a href="#访问对象方法：对象名-方法" class="headerlink" title="访问对象方法：对象名.方法()"></a>访问对象方法：对象名.方法()</h6>方法就是保存在对象中的函数，先找到对象，再用.操作符，进入对象中,找到内部的方法加()调用。<h6 id="内部访问属性：this-属性名"><a href="#内部访问属性：this-属性名" class="headerlink" title="内部访问属性：this.属性名"></a>内部访问属性：this.属性名</h6>在<strong>对象方法</strong>中，直接使用属性名无法访问到自己的属性值，会报错: 属性名未定义。<br>属性就是保存在对象中的变量，默认在作用域链中查找，作用域链包含临时函数作用域和window作用域，对象的{}并不是作用域，不包含在作用链中，故<strong>即使在对象内部，对象内的属性也无法被直接找到</strong>。只能使用<strong>对象名.属性名</strong>进行访问。<br>一般来说，为了避免紧耦合,我们在内部访问的时候使用<strong>this.属性名</strong>代替<strong>对象名.属性名</strong>，防止因外部改变带来的不变，<strong>this可以动态的指向调用者</strong>，当<strong>使用对象名.方法()调用对象</strong>方法时，方法中的<strong>this将自动指向“.”前的调用者，被替换为对象名</strong>。<blockquote>
+<h3 id="访问对象"><a href="#访问对象" class="headerlink" title="访问对象"></a>访问对象</h3><h4 id="访问对象属性：对象名-属性名"><a href="#访问对象属性：对象名-属性名" class="headerlink" title="访问对象属性：对象名.属性名"></a>访问对象属性：对象名.属性名</h4>属性就是保存在对象中的变量，要找到属性，得先找到对象，再用.操作符，进入对象中，访问属性。<h4 id="访问对象方法：对象名-方法"><a href="#访问对象方法：对象名-方法" class="headerlink" title="访问对象方法：对象名.方法()"></a>访问对象方法：对象名.方法()</h4>方法就是保存在对象中的函数，先找到对象，再用.操作符，进入对象中,找到内部的方法加()调用。<h4 id="内部访问属性：this-属性名"><a href="#内部访问属性：this-属性名" class="headerlink" title="内部访问属性：this.属性名"></a>内部访问属性：this.属性名</h4>在<strong>对象方法</strong>中，直接使用属性名无法访问到自己的属性值，会报错: 属性名未定义。<br>属性就是保存在对象中的变量，默认在作用域链中查找，作用域链包含临时函数作用域和window作用域，对象的{}并不是作用域，不包含在作用链中，故<strong>即使在对象内部，对象内的属性也无法被直接找到</strong>。只能使用<strong>对象名.属性名</strong>进行访问。<br>一般来说，为了避免紧耦合,我们在内部访问的时候使用<strong>this.属性名</strong>代替<strong>对象名.属性名</strong>，防止因外部改变带来的不变，<strong>this可以动态的指向调用者</strong>，当<strong>使用对象名.方法()调用对象</strong>方法时，方法中的<strong>this将自动指向“.”前的调用者，被替换为对象名</strong>。<blockquote>
 <p>注： this与函数定义无关,只与函数调用者有关。</p>
 </blockquote>
 </li>
 </ul>
-<h4 id="对象特点"><a href="#对象特点" class="headerlink" title="对象特点"></a>对象特点</h4><h6 id="对象与关联数组"><a href="#对象与关联数组" class="headerlink" title="对象与关联数组"></a>对象与关联数组</h6><p>相同点：</p>
+<h3 id="对象特点"><a href="#对象特点" class="headerlink" title="对象特点"></a>对象特点</h3><h4 id="对象与关联数组"><a href="#对象与关联数组" class="headerlink" title="对象与关联数组"></a>对象与关联数组</h4><p>相同点：</p>
 <ol>
 <li><p>都可用[“成员名”]或.成员名两种方式，访问自己的成员。</p>
 <blockquote>
